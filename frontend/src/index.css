@@ -1,0 +1,377 @@
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.login-form {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.title {
+    margin-bottom: 0%
+}
+
+.login-btn {
+    margin-top: 10%
+}
+
+.message-list {
+    list-style: none;
+}
+
+.message {
+    display: flex;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.room-links {
+    text-decoration: none
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 320px;
+    color: #333333;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.modal-buttons button {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ddd;
+    padding: 15px;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #fdfdfd;
+}
+
+.rooms-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 15px;
+    flex: 1;
+}
+
+.room-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.main-content {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.channel-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+}
+
+.message-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.message-form {
+    margin-top: auto;
+    display: flex;
+    padding: 10px;
+}
+
+.members-sidebar {
+    width: 200px;
+    border-left: 1px solid #ddd;
+    padding: 15px;
+    background: #fdfdfd;
+}
+
+.message.system-notification {
+    justify-content: center;
+    background-color: transparent;
+    padding: 6px 0;
+}
+
+.system-text {
+    font-size: 0.85rem;
+    color: #888888;
+    font-style: italic;
+}
+
+/* Livestream Page Layout Styles (Barebones Default) */
+.channel-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.video-player-area {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+    padding: 10px;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.channel-container h1,
+.channel-container h2,
+.channel-container h3 {
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+    margin: 2px 0 4px 0;
+    font-weight: bold;
+}
+
+.channel-container h1 {
+    font-size: 1.8em;
+}
+
+.channel-container h2 {
+    font-size: 1.4em;
+}
+
+.channel-container h3 {
+    font-size: 1.1em;
+}
+
+.channel-container p,
+.channel-container span,
+.channel-container strong,
+.channel-container div {
+    font-family: "Times New Roman", Times, serif;
+    color: #000000;
+}
+
+.channel-container p {
+    margin: 2px 0;
+}
+
+.obs-credentials-box {
+    background-color: transparent;
+    border: 1px solid #000000;
+    border-radius: 0;
+    padding: 8px;
+    margin: 0 0 10px 0;
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+    word-break: break-all;
+    font-size: 0.9em;
+}
+
+.obs-credentials-box h3 {
+    color: #000000;
+    margin: 0 0 5px 0;
+}
+
+.obs-credentials-box code {
+    background-color: #eeeeee;
+    color: #000000;
+    border: 1px solid #cccccc;
+    border-radius: 0;
+    padding: 2px 4px;
+    font-family: monospace;
+}
+
+.obs-credentials-box .hint {
+    font-size: 0.9em;
+    color: #333333;
+    margin-top: 5px;
+}
+
+.stream-viewport {
+    background-color: #eeeeee;
+    border: 1px solid #000000;
+    border-radius: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.stream-offline,
+.video-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    color: #000000;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.stream-offline .subtext {
+    font-size: 1em;
+    color: #333333;
+    margin-top: 5px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.chat-sidebar {
+    background-color: #ffffff;
+    border-left: 1px solid #000000;
+    padding: 10px;
+    width: 250px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-sidebar .message-container {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid #000000;
+    margin: 5px 0;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.message-list {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.message {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.username {
+    font-weight: bold;
+    display: inline;
+}
+
+.text {
+    display: inline;
+}
+
+.message-form {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: auto;
+}
+
+.message-box {
+    flex: 1;
+    width: auto;
+    margin-right: 0;
+    box-sizing: border-box;
+}
