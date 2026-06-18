@@ -50,8 +50,9 @@ const pool = mysql.createPool({
     queueLimit: 0
 })
 
+const livekitHttpUrl = process.env.LIVEKIT_URL.replace('ws://', 'http://').replace('wss://', 'https://')
 const ingressClient = new IngressClient(
-    process.env.LIVEKIT_URL,
+    livekitHttpUrl,
     process.env.LIVEKIT_API_KEY,
     process.env.LIVEKIT_API_SECRET
 )

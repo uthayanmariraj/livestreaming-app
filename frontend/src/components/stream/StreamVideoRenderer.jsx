@@ -14,7 +14,7 @@ export default function StreamVideoRenderer({ streamerIdentity, onLiveStateChang
     })));
     
     // Find the track belonging to the streamer (adminName/streamerIdentity + "_stream")
-    const streamerTrack = tracks.find((t) => t.participant.identity === `${streamerIdentity}_stream`)
+    const streamerTrack = tracks.find((t) => t.participant.identity === `${streamerIdentity}_stream`) || tracks[0]
     const isLive = !!streamerTrack
 
     useEffect(() => {

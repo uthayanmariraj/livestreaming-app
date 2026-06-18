@@ -6,16 +6,21 @@ services:
     container_name: livekit-redis
     ports:
       - "6379:6379"
+    restart: unless-stopped
 
   livekit:
     image: livekit/livekit-server:latest
     container_name: livekit-server
-    command: --config /etc/livekit.yaml
+    command: --config /etc/livekit.yaml --node-ip ${NODE_IP}
     volumes:
       - ./livekit.yaml:/etc/livekit.yaml
     ports:
       - "7880:7880"
+      - "7881:7881"
       - "7882:7882/udp"
+    depends_on:
+      - redis
+    restart: unless-stopped
 
   livekit-ingress:
     image: livekit/ingress:latest
@@ -25,3 +30,7 @@ services:
       - ./ingress.yaml:/etc/ingress.yaml
     ports:
       - "1935:1935"
+    depends_on:
+      - redis
+      - livekit
+    restart: unless-stopped

@@ -1,0 +1,14 @@
+port: 7880
+bind_addresses:
+  - ""
+
+keys:
+  # Format: <API_KEY>: <API_SECRET>
+  # Generate a secure key/secret pair for your deployment (e.g., using `livekit-server generate-keys`)
+  YOUR_API_KEY_HERE: YOUR_API_SECRET_HERE
+
+redis:
+  address: redis:6379
+
+rtc:
+  use_external_ip: false

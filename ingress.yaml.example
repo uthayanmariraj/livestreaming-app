@@ -1,0 +1,8 @@
+ws_url: "ws://livekit:7880"
+api_key: YOUR_API_KEY_HERE
+api_secret: YOUR_API_SECRET_HERE
+
+redis:
+  address: redis:6379
+
+rtmp_base_url: rtmp://localhost:1935/live
