@@ -114,6 +114,16 @@ We run LiveKit Server and LiveKit Ingress locally inside Docker container networ
     ```bash
     mysql -u root -p < backend/dbScript.sql
     ```
+    *   **For Windows PowerShell users:** The `<` operator is not supported. Use this instead:
+        ```powershell
+        Get-Content backend/dbScript.sql | mysql -u root -p
+        ```
+    *   **If the `mysql` command is not recognized:** You can run it via its absolute installation path (adjusting the version if necessary):
+        ```powershell
+        Get-Content backend/dbScript.sql | & "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p
+        ```
+        Or simply open [backend/dbScript.sql](file:///d:/livestreaming-app/backend/dbScript.sql) in your database GUI client (e.g., Workbench or DBeaver) and run the script.
+
 
 ---
 
