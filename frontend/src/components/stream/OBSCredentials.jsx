@@ -29,8 +29,8 @@ export default function OBSCredentials({ serverUrl, streamKey }) {
             <h3>OBS Stream Settings</h3>
             <p>
                 <strong>Server URL:</strong>{' '}
-                <code 
-                    onClick={handleCopyUrl} 
+                <code
+                    onClick={handleCopyUrl}
                     style={{ cursor: 'pointer' }}
                     title="Click to copy Server URL"
                 >
@@ -39,15 +39,15 @@ export default function OBSCredentials({ serverUrl, streamKey }) {
             </p>
             <p>
                 <strong>Stream Key:</strong>{' '}
-                <code 
-                    onClick={handleCopyKey} 
+                <code
+                    onClick={handleCopyKey}
                     style={{ cursor: 'pointer' }}
                     title="Click to copy Stream Key"
                 >
                     {copiedKey ? 'Copied!' : 'Click to copy'}
                 </code>
             </p>
-            <p className="hint">Click each field to copy directly into OBS Studio.</p>
+            <p className="hint">&emsp;Click each field and paste into OBS &emsp;Studio.</p>
         </div>
     )
 }
